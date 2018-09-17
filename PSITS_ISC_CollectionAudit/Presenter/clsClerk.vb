@@ -1,23 +1,40 @@
 ﻿Public Class clsClerk
-    Public Sub loadDg()
+    Public Sub loadDg_Fee()
         Try
             openCon()
-            sql = "SELECT * FROM tblFee_Log"
-            comm = New OleDb.OleDbCommand(sql, con)
-            Dim dt As New DataTable
+            sql = "SELECT * FROM tblFee"
+            Dim da As New OleDb.OleDbDataAdapter(sql, con)
+            Dim ds As New DataSet
+            ds.Clear()
 
-            dt.Load(comm.ExecuteReader())
-            reader = comm.ExecuteReader()
+            da.Fill(ds)
+            frmAdmin_Transac.dgFee.DataSource = ds.Tables(0)
 
-            Dim x As Integer = 0
+            With frmAdmin_Transac.dgFee
+                .Columns(0).HeaderText = "FEE ID"
+                .Columns(1).HeaderText = "DESCRIPTION"
+                .Columns(2).HeaderText = "FEE"
+            End With
+        Catch ex As Exception
+            MessageBox.Show("Nothing to Show", "DATA", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Finally
+            closeCon()
+        End Try
+    End Sub
+    Public Sub loadDG_Student()
+        Try
+            openCon()
+            sql = "SELECT stud_ID FROM tblStudent"
+            Dim da As New OleDb.OleDbDataAdapter(sql, con)
+            Dim ds As New DataSet
+            ds.Clear()
 
-            While reader.Read
-                Dim feeID = dt.Rows(x).Item(0)
-                Dim desc = dt.Rows(x).Item(1)
-                Dim amount = Val(dt.Rows(x).Item(2))
-                frmAdmin_Transac.DataGridView1.Rows.Add(New String() {feeID, desc, Format(amount, "P#,##0.00")})
-                x += 1
-            End While
+            da.Fill(ds)
+            frmAdmin_Transac.dgStudent.DataSource = ds.Tables(0)
+
+            With frmAdmin_Transac.dgStudent
+                .Columns(0).HeaderText = "FEE ID"
+            End With
         Catch ex As Exception
             MessageBox.Show("Nothing to Show", "DATA", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Finally

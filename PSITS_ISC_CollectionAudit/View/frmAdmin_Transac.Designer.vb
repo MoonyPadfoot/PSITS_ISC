@@ -22,73 +22,86 @@ Partial Class frmAdmin_Transac
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.FeeID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.desc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.paid = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.size = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.dgFee = New System.Windows.Forms.DataGridView()
+        Me.dgStudent = New System.Windows.Forms.DataGridView()
+        Me.cboStud_Srch = New System.Windows.Forms.ComboBox()
+        Me.tbStud_Srch = New System.Windows.Forms.TextBox()
+        CType(Me.dgFee, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgStudent, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'Button1
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FeeID, Me.desc, Me.amount, Me.paid, Me.size})
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 12)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(642, 356)
-        Me.DataGridView1.TabIndex = 0
+        Me.Button1.Location = New System.Drawing.Point(734, 69)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(86, 26)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
-        'FeeID
+        'dgFee
         '
-        Me.FeeID.HeaderText = "FEE ID"
-        Me.FeeID.Name = "FeeID"
+        Me.dgFee.AllowUserToAddRows = False
+        Me.dgFee.AllowUserToDeleteRows = False
+        Me.dgFee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgFee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgFee.Location = New System.Drawing.Point(329, 69)
+        Me.dgFee.Name = "dgFee"
+        Me.dgFee.ReadOnly = True
+        Me.dgFee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgFee.Size = New System.Drawing.Size(390, 230)
+        Me.dgFee.TabIndex = 2
         '
-        'desc
+        'dgStudent
         '
-        Me.desc.HeaderText = "DESCRIPTION"
-        Me.desc.Name = "desc"
+        Me.dgStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgStudent.Location = New System.Drawing.Point(150, 69)
+        Me.dgStudent.Name = "dgStudent"
+        Me.dgStudent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.dgStudent.Size = New System.Drawing.Size(142, 230)
+        Me.dgStudent.TabIndex = 3
         '
-        'amount
+        'cboStud_Srch
         '
-        Me.amount.HeaderText = "AMOUNT"
-        Me.amount.Name = "amount"
+        Me.cboStud_Srch.FormattingEnabled = True
+        Me.cboStud_Srch.Location = New System.Drawing.Point(25, 43)
+        Me.cboStud_Srch.Name = "cboStud_Srch"
+        Me.cboStud_Srch.Size = New System.Drawing.Size(121, 21)
+        Me.cboStud_Srch.TabIndex = 4
+        Me.cboStud_Srch.Text = "-SEARCH BY-"
         '
-        'paid
+        'tbStud_Srch
         '
-        Me.paid.HeaderText = "PAID"
-        Me.paid.Name = "paid"
-        Me.paid.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.paid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'size
-        '
-        Me.size.HeaderText = "SIZE"
-        Me.size.Name = "size"
+        Me.tbStud_Srch.Location = New System.Drawing.Point(152, 44)
+        Me.tbStud_Srch.Name = "tbStud_Srch"
+        Me.tbStud_Srch.Size = New System.Drawing.Size(89, 20)
+        Me.tbStud_Srch.TabIndex = 5
         '
         'frmAdmin_Transac
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(834, 389)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.ClientSize = New System.Drawing.Size(871, 400)
+        Me.Controls.Add(Me.tbStud_Srch)
+        Me.Controls.Add(Me.cboStud_Srch)
+        Me.Controls.Add(Me.dgStudent)
+        Me.Controls.Add(Me.dgFee)
+        Me.Controls.Add(Me.Button1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmAdmin_Transac"
         Me.Text = "frmClerk_"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        CType(Me.dgFee, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgStudent, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents FeeID As DataGridViewTextBoxColumn
-    Friend WithEvents desc As DataGridViewTextBoxColumn
-    Friend WithEvents amount As DataGridViewTextBoxColumn
-    Friend WithEvents paid As DataGridViewCheckBoxColumn
-    Friend WithEvents size As DataGridViewComboBoxColumn
+    Friend WithEvents Button1 As Button
+    Friend WithEvents dgFee As DataGridView
+    Friend WithEvents dgStudent As DataGridView
+    Friend WithEvents cboStud_Srch As ComboBox
+    Friend WithEvents tbStud_Srch As TextBox
 End Class
